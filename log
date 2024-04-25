@@ -34,3 +34,17 @@ hashmap.c:60:12: error: ‘*map.buckets’ is used uninitialized [-Werror=uninit
 cc1: all warnings being treated as errors
 Compilation failed
 8ea942c
+Thu 25 Apr 2024 12:07:31 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:60:41: error: returning ‘int’ from a function with return type ‘HashMap *’ {aka ‘struct HashMap *’} makes pointer from integer without a cast [-Werror=int-conversion]
+   60 |     if (map->buckets[i] == NULL) return -1;
+      |                                         ^
+hashmap.c:60:12: error: ‘*map.buckets’ is used uninitialized [-Werror=uninitialized]
+   60 |     if (map->buckets[i] == NULL) return -1;
+      |         ~~~^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+ecd42ed
