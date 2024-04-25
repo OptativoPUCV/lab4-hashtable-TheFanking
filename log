@@ -91,3 +91,17 @@ Thu 25 Apr 2024 12:16:01 AM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 9002031
+Thu 25 Apr 2024 12:17:07 AM UTC: 
+ hashmap.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:63:18: error: returning ‘int’ from a function with return type ‘HashMap *’ {aka ‘struct HashMap *’} makes pointer from integer without a cast [-Werror=int-conversion]
+   63 |           return 1;
+      |                  ^
+hashmap.c:61:16: error: ‘*map.buckets’ may be used uninitialized [-Werror=maybe-uninitialized]
+   61 |         if (map->buckets[i] == NULL)
+      |             ~~~^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+0975586
