@@ -105,3 +105,9 @@ hashmap.c:61:16: error: ‘*map.buckets’ may be used uninitialized [-Werror=ma
 cc1: all warnings being treated as errors
 Compilation failed
 0975586
+Thu 25 Apr 2024 12:20:43 AM UTC: 
+ hashmap.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+ tests:  1|5
+total_score: 10/70
+1e90330
