@@ -46,33 +46,12 @@ void insertMap(HashMap * map, char * key, void * value)
   if (mapAux[posicion].key == NULL)
   {
     map->buckets[posicion] = createPair(key, value);
+    map->current++;
+    if (map->buckets[posicion] == NULL)
     {
-      posicion++;
-      if (map->buckets == NULL)
-      {
-        exit(EXIT_FAILURE);
-      }
+      exit(EXIT_FAILURE);
     }
-  }
-  else
-  {
-    for (long i = posicion + 1 ; i < map->capacity ; i++)
-      {
-        if (map->buckets[i] == NULL)
-        {
-          map->buckets[i] = createPair(key,value);
-          if (map->buckets[i] == NULL)
-          {
-            exit(EXIT_FAILURE);
-          }
-          return;
-        }  
-      }
-    
-  }
-  printf("No se puede isertar");
-}
-
+  }  
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
 
