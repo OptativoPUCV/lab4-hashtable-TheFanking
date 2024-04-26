@@ -47,6 +47,7 @@ void insertMap(HashMap * map, char * key, void * value)
   {
     map->buckets[posicion] = createPair(key, value);
     {
+      posicion++;
       if (map->buckets == NULL)
       {
         exit(EXIT_FAILURE);
