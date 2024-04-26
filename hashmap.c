@@ -45,24 +45,28 @@ void insertMap(HashMap * map, char * key, void * value)
   Pair *mapAux = createPair(key,value);
   if (mapAux[posicion].key == NULL)
   {
-    mapAux[posicion].key = key;
-    mapAux[posicion].value = value;
-    posicion++;
-  }
-  else if (mapAux[posicion].key != NULL)
-  {
-    for (long i = posicion + 1 ; i < map->capacity ; i++)
+    map->buckets[posicion] = createPair(key, value);
+    {
+      if (map->buckets == NULL)
       {
-        if (mapAux[i].key == NULL)
-        {
-          mapAux[i].key = key;
-          mapAux[i].value = value;
-        }
+        exit(EXIT_FAILURE);
       }
+    }
   }
   else
   {
-    return NULL;  
+    for (long i = posicion + 1 ; i < map->capacity ; i++)
+      {
+        if (map->buckets[i] == NULL)
+        {
+          map->buckets[i] = createPair(key,value);
+          if (map->buckets[i] == NULL)
+          {
+            exit(EXIT_FAILURE);
+          }
+          return;
+        }  
+      }
   }
 }
 
