@@ -68,7 +68,9 @@ void insertMap(HashMap * map, char * key, void * value)
           return;
         }  
       }
+    
   }
+  printf("No se puede isertar");
 }
 
 void enlarge(HashMap * map) {
