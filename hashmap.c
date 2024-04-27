@@ -152,6 +152,10 @@ Pair * searchMap(HashMap * map,  char * key)
           map->current++;
           return map->buckets[i];
         }
+        else
+        {
+          return NULL;
+        }
       }
 
     for (long j = 0 ; j < posicion ; j++)
@@ -162,9 +166,12 @@ Pair * searchMap(HashMap * map,  char * key)
           map->current++;
           return map->buckets[j];
         }
+        else
+        {
+          return NULL;
+        }
       }
   }
-  return NULL;
 }
 
 Pair * firstMap(HashMap * map) {
