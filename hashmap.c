@@ -118,7 +118,7 @@ HashMap * createMap(long capacity)
 
 void eraseMap(HashMap * map,  char * key) {    
 
-
+  printf("HOLa");
 }
 
 Pair * searchMap(HashMap * map,  char * key) 
@@ -165,7 +165,6 @@ Pair * searchMap(HashMap * map,  char * key)
       }
   }
   return NULL;
-  
 }
 
 Pair * firstMap(HashMap * map) {
