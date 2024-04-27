@@ -162,10 +162,7 @@ Pair * searchMap(HashMap * map,  char * key)
 
 Pair * firstMap(HashMap * map) 
 {
-  if (map == NULL) {
-    return NULL;
-  }
-
+  return NULL;
   // Si no se encontró ningún elemento no nulo, devuelve NULL
   
 }
