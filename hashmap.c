@@ -44,16 +44,16 @@ void insertMap(HashMap * map, char * key, void * value)
   long posicion = hash(key,map->capacity);
   if (posicion == -1)
   {
-    exit(EXIT_FAILURE);
+    return;
   }
   if (posicion < 0 || posicion >= map->capacity)
   {
-    exit(EXIT_FAILURE);
+    return;
   }
   Pair *mapAux = createPair(key,value);
   if (mapAux == NULL)
     {
-      exit(EXIT_FAILURE);
+      return;
     }
   if (map->buckets[posicion] == NULL)
   {
