@@ -91,6 +91,7 @@ void enlarge(HashMap * map)
       }
       
     }
+  free(aux);
 
 }
 
