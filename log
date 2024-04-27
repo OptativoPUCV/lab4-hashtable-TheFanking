@@ -2581,3 +2581,14 @@ hashmap.c:179:1: error: control reaches end of non-void function [-Werror=return
 cc1: all warnings being treated as errors
 Compilation failed
 5a44281
+Sat 27 Apr 2024 05:52:48 PM UTC: 
+ hashmap.c | 8 --------
+ 1 file changed, 8 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:171:1: error: control reaches end of non-void function [-Werror=return-type]
+  171 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+5a2afd9
