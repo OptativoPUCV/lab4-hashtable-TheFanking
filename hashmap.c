@@ -171,7 +171,17 @@ Pair * searchMap(HashMap * map,  char * key)
 
 Pair * firstMap(HashMap * map) 
 {
-  map->current++;
+  if (map == NULL) {
+    return NULL;
+  }
+
+  // Verifica si el arreglo de cubetas está vacío
+  if (map->buckets == NULL || map->size == 0) {
+    return NULL;
+  }
+
+  // Devuelve el primer elemento del arreglo de cubetas
+  map->current++; // Incrementa el índice current
   return map->buckets[0];
   
 }
