@@ -53,7 +53,7 @@ void insertMap(HashMap * map, char * key, void * value)
   else
   {
     for (long i = posicion ; i < map->capacity ; i++)
-      {
+    {
       if (map->buckets[i] == NULL)
         {
           map->buckets[i] = createPair(key,value); 
@@ -61,9 +61,9 @@ void insertMap(HashMap * map, char * key, void * value)
           map->size++;
           return;
         }
-      }
+    }
     for (long j = 0 ; j < posicion ; j++)
-      {
+    {
         if(map->buckets[j] == NULL)
         {
           map->buckets[j] = createPair(key,value);
@@ -71,7 +71,8 @@ void insertMap(HashMap * map, char * key, void * value)
           map->size++;
           return;
         }  
-      }
+    }
+  map->current++;  
 }
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
