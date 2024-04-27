@@ -130,7 +130,7 @@ Pair * searchMap(HashMap * map,  char * key)
 
   if (strcmp(map->buckets[posicion]->key,key) == 0)
   {
-    map->current++;
+    map->current = posicion;
     return map->buckets[posicion];
   }
   else
