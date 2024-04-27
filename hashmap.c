@@ -125,16 +125,16 @@ Pair * searchMap(HashMap * map,  char * key)
 {
   if (map == NULL)
   {
-    exit(EXIT_FAILURE);
+    return NULL;
   }
   long posicion = hash(key,map->capacity)
   if (posicion == -1)
   {
-    exit(EXIT_FAILURE);
+    return NULL;
   }
   else if (posicion < 0 || posicion >= map->capacity)
   {
-    exit(EXIT_FAILRE);
+    return NULL;
   }
 
   if (strcmp(map->buckets[posicion]->key,key) == 0)
@@ -172,6 +172,7 @@ Pair * searchMap(HashMap * map,  char * key)
         }
       }
   }
+  return NULL;
 }
 
 Pair * firstMap(HashMap * map) {
