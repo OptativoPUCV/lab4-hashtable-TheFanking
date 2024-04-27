@@ -42,14 +42,6 @@ int is_equal(void* key1, void* key2){
 void insertMap(HashMap * map, char * key, void * value) 
 {
   long posicion = hash(key,map->capacity);
-  if (posicion == -1)
-  {
-    return;
-  }
-  if (posicion < 0 || posicion >= map->capacity)
-  {
-    return;
-  }
   Pair *mapAux = createPair(key,value);
   if (mapAux == NULL)
     {
@@ -66,17 +58,23 @@ void insertMap(HashMap * map, char * key, void * value)
   {
     for (long i = posicion ; i < map->capacity ; i++)
     {
-      map->buckets[i] = mapAux; 
-      map->current++;
-      map->size++;
-      return;
+      if (map->buckets[i] == NULL)
+        {
+          map->buckets[i] = mapAux; 
+          map->current++;
+          map->size++;
+          return;
+        }
     }
     for (long j = 0 ; j < posicion ; j++)
     {
-      map->buckets[j] = mapAux;
-      map->current++;
-      map->size++;
-      return;  
+        if(map->buckets[j] == NULL)
+        {
+          map->buckets[j] = mapAux;
+          map->current++;
+          map->size++;
+          return;
+        }  
     }
 }
 void enlarge(HashMap * map) {
@@ -165,6 +163,9 @@ Pair * searchMap(HashMap * map,  char * key)
 
 Pair * firstMap(HashMap * map) 
 {
+  if (map == NULL) {
+    return NULL;
+  }
 
   // Recorre el arreglo de cubetas hasta encontrar el primer elemento no nulo
   for (int i = 0; i < map->capacity; i++) {
