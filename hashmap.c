@@ -187,7 +187,7 @@ Pair * nextMap(HashMap * map)
 
   for (long i = map->current + 1 ; i < map->capacity ; i++)
     {
-      if (strcmp(map->buckets[i]->key, " ") != 0)
+      if (map->buckets[i]->key != NULL)
       {
         map->current = i;
         return map->buckets[i];
