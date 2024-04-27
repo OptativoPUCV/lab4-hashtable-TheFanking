@@ -141,11 +141,10 @@ Pair * searchMap(HashMap * map,  char * key)
         {
           return map->buckets[i];
         }
-        return NULL
+        return NULL;
       }
   }
   
-  return NULL;
 }
 
 Pair * firstMap(HashMap * map) {
