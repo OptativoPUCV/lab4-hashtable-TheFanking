@@ -135,15 +135,16 @@ Pair * searchMap(HashMap * map,  char * key)
   }
   else
   {
-    for (int i = map->buckets[posicion] + 1 ; i < map->capacity ; i++)
+    for (int i = map->buckets[posicion] ; i < map->capacity ; i++)
       {
-        if (strcmp(map->buckets[i].key,key) == 0)
+        if (map->buckets[i] != NULL && 
+            strcmp(map->buckets[i].key,key) == 0)
         {
           return map->buckets[i];
         }
-        return NULL;
       }
   }
+  return NULL;
   
 }
 
