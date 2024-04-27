@@ -2894,3 +2894,14 @@ Sat 27 Apr 2024 11:22:46 PM UTC:
  tests:  13|2
 total_score: 50/70
 f8169d1
+Sat 27 Apr 2024 11:23:25 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:117:24: error: ‘*(map->buckets + (sizetype)((long unsigned int)i * 8))’ is a pointer; did you mean to use ‘->’?
+  117 |         map->buckets[i].key = NULL;
+      |                        ^
+      |                        ->
+Compilation failed
+d5c1719

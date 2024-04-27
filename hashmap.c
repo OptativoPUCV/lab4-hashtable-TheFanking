@@ -114,7 +114,7 @@ void eraseMap(HashMap * map,  char * key) {
     {
       if (i == posicion)
       {
-        map->buckets[i] = NULL;
+        map->buckets[i].key = NULL;
         map->size--;
         
       }
