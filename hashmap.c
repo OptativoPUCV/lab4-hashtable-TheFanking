@@ -47,7 +47,7 @@ void insertMap(HashMap * map, char * key, void * value)
     {
       return;
     }
-  if (map->buckets[posicion] == NULL)
+  if (map == NULL && key == NULL && value == NULL)
   {
     map->buckets[posicion] = mapAux;
     map->current++;
