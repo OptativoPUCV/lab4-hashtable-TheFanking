@@ -47,7 +47,6 @@ void insertMap(HashMap * map, char * key, void * value)
   {
     map->buckets[posicion] = createPair(key, value);
     map->current++;
-    map->size++;
     if (map->buckets[posicion] == NULL)
     {
       exit(EXIT_FAILURE);
@@ -61,7 +60,6 @@ void insertMap(HashMap * map, char * key, void * value)
          {
            map->buckets[i] = createPair(key,value); 
            map->current++;
-           map->size++;
            if (map->buckets[i] == NULL)
            {
              exit(EXIT_FAILURE);
@@ -74,7 +72,6 @@ void insertMap(HashMap * map, char * key, void * value)
          {
            map->buckets[i] == createPair(key,value);
            map->current++;
-           map->size++;
            if (map->buckets[j] == NULL)
            {
              exit(EXIT_FAILURE);
