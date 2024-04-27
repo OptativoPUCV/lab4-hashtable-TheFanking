@@ -2681,3 +2681,19 @@ Sat 27 Apr 2024 06:34:58 PM UTC:
  tests:  11|3
 total_score: 40/70
 caca9cc
+Sat 27 Apr 2024 06:36:12 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:190:71: error: expected ‘)’ before ‘{’ token
+  190 |       if (map->buckets[i] != NULL && strcmp(map->buckets[i]->key , "")
+      |          ~                                                            ^
+      |                                                                       )
+  191 |       {
+      |       ~                                                                
+hashmap.c:195:5: error: expected expression before ‘}’ token
+  195 |     }
+      |     ^
+Compilation failed
+a25e146
