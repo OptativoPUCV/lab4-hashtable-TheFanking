@@ -128,6 +128,14 @@ Pair * searchMap(HashMap * map,  char * key)
     return NULL;
   }
   long posicion = hash(key,map->capacity)
+  if (posicion == -1)
+  {
+    return NULL
+  }
+  else if (posicion < 0 || posicion >= map->capacity)
+  {
+    return NULL
+  }
 
   if (strcmp(map->buckets[posicion].key,key) == 0)
   {
