@@ -148,11 +148,11 @@ Pair * searchMap(HashMap * map,  char * key)
 
     for (long j = 0 ; j < posicion ; j++)
       {
-        if (map->buckets[i] != NULL &&
-            strcmp(map->buckets[i].key,key) == 0)
+        if (map->buckets[j] != NULL &&
+            strcmp(map->buckets[j].key,key) == 0)
         {
           map->current++;
-          return map->buckets[i];
+          return map->buckets[j];
         }
       }
   }
