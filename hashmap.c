@@ -178,7 +178,7 @@ Pair * firstMap(HashMap * map)
   // Recorre el arreglo de cubetas hasta encontrar el primer elemento no nulo
   for (int i = 0; i < map->capacity; i++) {
     if (map->buckets[i] != NULL) {
-        map->current = i; // Actualiza el índice current
+        map->current++;; // Actualiza el índice current
         return map->buckets[i];
     }
   }
