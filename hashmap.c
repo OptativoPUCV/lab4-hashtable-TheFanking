@@ -67,7 +67,7 @@ void insertMap(HashMap * map, char * key, void * value)
         if(map->buckets[j] == NULL)
         {
           map->buckets[j] = mapAux;
-          map->current++;
+          map->current = j;
           map->size++;
           return;
         }
