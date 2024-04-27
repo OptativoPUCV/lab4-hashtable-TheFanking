@@ -54,18 +54,23 @@ void insertMap(HashMap * map, char * key, void * value)
   {
     for (long i = posicion ; i < map->capacity ; i++)
       {
-        map->buckets[i] = createPair(key,value); 
-        map->current++;
-        map->size++;
-        return;
+      if (map->buckets[i] == NULL)
+        {
+          map->buckets[i] = createPair(key,value); 
+          map->current++;
+          map->size++;
+          return;
+        }
       }
-  }
     for (long j = 0 ; j < posicion ; j++)
       {
-        map->buckets[j] = createPair(key,value);
-        map->current++;
-        map->size++;
-        return;
+        if(map->buckets[j] == NULL)
+        {
+          map->buckets[j] = createPair(key,value);
+          map->current++;
+          map->size++;
+          return;
+        }  
       }
 }
 void enlarge(HashMap * map) {
