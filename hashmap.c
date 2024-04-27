@@ -125,22 +125,21 @@ Pair * searchMap(HashMap * map,  char * key)
 {
   if (map == NULL)
   {
-    return NULL;
+    exit(EXIT_FAILURE);
   }
   long posicion = hash(key,map->capacity)
   if (posicion == -1)
   {
-    return NULL;
+    exit(EXIT_FAILURE);
   }
   else if (posicion < 0 || posicion >= map->capacity)
   {
-    return NULL;
+    exit(EXIT_FAILRE);
   }
 
   if (strcmp(map->buckets[posicion]->key,key) == 0)
   {
     map->current++;
-    map->size++;
     return map->buckets[posicion];
   }
   else
@@ -151,7 +150,6 @@ Pair * searchMap(HashMap * map,  char * key)
             strcmp(map->buckets[i]->key,key) == 0)
         {
           map->current++;
-          map->size++;
           return map->buckets[i];
         }
       }
@@ -162,7 +160,6 @@ Pair * searchMap(HashMap * map,  char * key)
             strcmp(map->buckets[j]->key,key) == 0)
         {
           map->current++;
-          map->size++;
           return map->buckets[j];
         }
       }
