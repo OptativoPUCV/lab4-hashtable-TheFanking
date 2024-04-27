@@ -144,12 +144,13 @@ Pair * searchMap(HashMap * map,  char * key)
   }
   else
   {
-    for (long i = posicion +1 ; i < map->capacity ; i++)
+    for (long i = posicion +1 ; i < map->capacity && map->buckets[i] 
+         != NULL ; i++)
       {
         if (map->buckets[i] != NULL && 
             strcmp(map->buckets[i]->key,key) == 0)
         {
-          map->current++;
+          map->current = i;
           return map->buckets[i];
         }
         else if (map->buckets[i] == NULL)
@@ -158,12 +159,13 @@ Pair * searchMap(HashMap * map,  char * key)
         }
       }
 
-    for (long j = 0 ; j < posicion ; j++)
+    for (long j = 0 ; j < posicion  map->buckets[j] 
+         != NULL ; j++)
       {
         if (map->buckets[j] != NULL &&
             strcmp(map->buckets[j]->key,key) == 0)
         {
-          map->current++;
+          map->current = j;
           return map->buckets[j];
         }
         else if (map->buckets[j] == NULL)
