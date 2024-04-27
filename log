@@ -2729,3 +2729,14 @@ Sat 27 Apr 2024 06:40:23 PM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 95f2890
+Sat 27 Apr 2024 06:41:34 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:171:10: error: expected ‘(’ before ‘if’
+  171 |       if if (map->buckets[i] != NULL && strcmp(map->buckets[i]->key, "") != 0)
+      |          ^~
+      |          (
+Compilation failed
+f072ba3
