@@ -136,7 +136,7 @@ Pair * searchMap(HashMap * map,  char * key)
   }
   else
   {
-    for (long i = map->buckets[posicion] +1 ; i < map->capacity ; i++)
+    for (long i = posicion +1 ; i < map->capacity ; i++)
       {
         if (map->buckets[i] != NULL && 
             strcmp(map->buckets[i].key,key) == 0)
