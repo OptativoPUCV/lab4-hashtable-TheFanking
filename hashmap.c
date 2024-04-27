@@ -141,7 +141,7 @@ Pair * searchMap(HashMap * map,  char * key)
         if (map->buckets[i] != NULL && 
             strcmp(map->buckets[i]->key,key) == 0)
         {
-          map->current++;
+          map->current = i;
           return map->buckets[i];
         }
       }
@@ -152,7 +152,7 @@ Pair * searchMap(HashMap * map,  char * key)
         if (map->buckets[j] != NULL &&
             strcmp(map->buckets[j]->key,key) == 0)
         {
-          map->current++;
+          map->current = j;
           return map->buckets[j];
         }
       }
@@ -162,6 +162,10 @@ Pair * searchMap(HashMap * map,  char * key)
 
 Pair * firstMap(HashMap * map) 
 {
+  if (map == NULL)
+  {
+    return NULL;
+  }
   for (long i = 0 ; i < map->capacity ; i++)
     {
       if (map->buckets[i] != NULL && map->buckets[i]->key != NULL)
@@ -171,12 +175,16 @@ Pair * firstMap(HashMap * map)
       }
     }
   return NULL;
-  // Si no se encontró ningún elemento no nulo, devuelve NULL
   
 }
 
 Pair * nextMap(HashMap * map) 
 {
+  if (map == NULL || firstMap(map) == NULL)
+  {
+    return NULL;
+  }
+  
 
     return NULL;
 }
