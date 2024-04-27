@@ -57,7 +57,7 @@ void insertMap(HashMap * map, char * key, void * value)
     }
   if (map->buckets[posicion] == NULL)
   {
-    map->buckets[posicion] = createPair(key, value);
+    map->buckets[posicion] = mapAux;
     map->current++;
     map->size++;
     return;
@@ -68,7 +68,7 @@ void insertMap(HashMap * map, char * key, void * value)
     {
       if (map->buckets[i] == NULL)
         {
-          map->buckets[i] = createPair(key,value); 
+          map->buckets[i] = mapAux; 
           map->current++;
           map->size++;
           return;
@@ -78,7 +78,7 @@ void insertMap(HashMap * map, char * key, void * value)
     {
         if(map->buckets[j] == NULL)
         {
-          map->buckets[j] = createPair(key,value);
+          map->buckets[j] = mapAux;
           map->current++;
           map->size++;
           return;
@@ -121,10 +121,10 @@ void eraseMap(HashMap * map,  char * key) {
 
 }
 
-Pair * searchMap(HashMap * map,  char * key) {   
+Pair * searchMap(HashMap * map,  char * key) 
+{ 
 
-
-    return NULL;
+  return NULL;
 }
 
 Pair * firstMap(HashMap * map) {
