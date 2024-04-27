@@ -2853,3 +2853,15 @@ Sat 27 Apr 2024 07:05:28 PM UTC:
  tests:  13|2
 total_score: 50/70
 a104131
+Sat 27 Apr 2024 07:07:01 PM UTC: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:183:22: error: implicit declaration of function ‘first’; did you mean ‘firstMap’? [-Werror=implicit-function-declaration]
+  183 |   if (map == NULL || first(map) == -1) {
+      |                      ^~~~~
+      |                      firstMap
+cc1: all warnings being treated as errors
+Compilation failed
+5170578
