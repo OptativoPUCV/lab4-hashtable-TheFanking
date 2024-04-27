@@ -115,7 +115,7 @@ Pair * searchMap(HashMap * map,  char * key)
   {
     return NULL;
   }
-  long posicion = hash(key,map->capacity)
+  long posicion = hash(key,map->capacity);
   if (posicion == -1)
   {
     return NULL;
@@ -143,7 +143,7 @@ Pair * searchMap(HashMap * map,  char * key)
         }
       }
 
-    for (long j = 0 ; j < posicion  map->buckets[j] 
+    for (long j = 0 ; j < posicion && map->buckets[j] 
          != NULL ; j++)
       {
         if (map->buckets[j] != NULL &&
