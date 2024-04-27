@@ -187,7 +187,7 @@ Pair * nextMap(HashMap * map)
   Pair *aux = firstMap(map);
   long posicion = hash(aux->value,map->capacity);
 
-  for (long i = posicion + 1 ; i < map->capacity ; i++)
+  for (long i = posicion + 1 ; i <= map->capacity ; i++)
     {
       if (map->buckets[i] != NULL && map->buckets[i]->key != NULL)
       {
