@@ -131,15 +131,27 @@ Pair * searchMap(HashMap * map,  char * key)
 
   if (strcmp(map->buckets[posicion].key,key) == 0)
   {
+    map->current++;
     return map->buckets[posicion];
   }
   else
   {
-    for (long i = map->buckets[posicion] ; i < map->capacity ; i++)
+    for (long i = map->buckets[posicion] +1 ; i < map->capacity ; i++)
       {
         if (map->buckets[i] != NULL && 
             strcmp(map->buckets[i].key,key) == 0)
         {
+          map->current++;
+          return map->buckets[i];
+        }
+      }
+
+    for (long j = 0 ; j < posicion ; j++)
+      {
+        if (map->buckets[i] != NULL &&
+            strcmp(map->buckets[i].key,key) == 0)
+        {
+          map->current++;
           return map->buckets[i];
         }
       }
