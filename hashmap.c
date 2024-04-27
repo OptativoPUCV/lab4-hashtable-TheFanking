@@ -152,7 +152,7 @@ Pair * searchMap(HashMap * map,  char * key)
           map->current++;
           return map->buckets[i];
         }
-        else
+        else if (map->buckets[i] == NULL)
         {
           return NULL;
         }
@@ -166,7 +166,7 @@ Pair * searchMap(HashMap * map,  char * key)
           map->current++;
           return map->buckets[j];
         }
-        else
+        else if (map->buckets[j] == NULL)
         {
           return NULL;
         }
