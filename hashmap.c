@@ -175,14 +175,16 @@ Pair * firstMap(HashMap * map)
     return NULL;
   }
 
-  // Verifica si el arreglo de cubetas está vacío
-  if (map->buckets == NULL || map->size == 0) {
-    return NULL;
+  // Recorre el arreglo de cubetas hasta encontrar el primer elemento no nulo
+  for (int i = 0; i < map->capacity; i++) {
+    if (map->buckets[i] != NULL) {
+        map->current = i; // Actualiza el índice current
+        return map->buckets[i];
+    }
   }
 
-  // Devuelve el primer elemento del arreglo de cubetas
-  map->current++; // Incrementa el índice current
-  return map->buckets[0];
+  // Si no se encontró ningún elemento no nulo, devuelve NULL
+  return NULL;
   
 }
 
