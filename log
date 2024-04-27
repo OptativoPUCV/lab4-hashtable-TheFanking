@@ -2570,3 +2570,14 @@ test.c:100:6: error: ‘hash_test1’ defined but not used [-Werror=unused-funct
 cc1: all warnings being treated as errors
 Compilation failed
 6009b11
+Sat 27 Apr 2024 05:52:21 PM UTC: 
+ hashmap.c | 3 +++
+ 1 file changed, 3 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:179:1: error: control reaches end of non-void function [-Werror=return-type]
+  179 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+5a44281

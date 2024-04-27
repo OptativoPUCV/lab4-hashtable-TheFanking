@@ -70,7 +70,10 @@ void insertMap(HashMap * map, char * key, void * value)
           map->current++;
           map->size++;
           return;
-        }  
+        }
+    }
+  }
+    
 }
 void enlarge(HashMap * map) 
 {
