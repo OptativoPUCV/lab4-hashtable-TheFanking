@@ -184,7 +184,6 @@ Pair * firstMap(HashMap * map)
   }
 
   // Si no se encontró ningún elemento no nulo, devuelve NULL
-  return NULL;
   
 }
 
