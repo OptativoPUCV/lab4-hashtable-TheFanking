@@ -52,17 +52,13 @@ void insertMap(HashMap * map, char * key, void * value)
   }
   else
   {
-    if (mapAux[posicion].key != NULL)
+    if (mapAux[posicion].key == NULL)
     {
       for (long i = posicion ; i < map->capacity ; i++)
         {
           map->buckets[i] = createPair(key,value); 
           map->current++;
           map->size++;
-          if (map->buckets[i] == NULL)
-          {
-            return;
-          }
           return;
         }
     }
