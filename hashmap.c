@@ -184,8 +184,9 @@ Pair * nextMap(HashMap * map)
   {
     return NULL;
   }
+  Pair *aux = firstMap(map);
 
-  for (long i = map->current + 1 ; i < map->capacity ; i++)
+  for (long i = aux->current + 1 ; i < map->capacity ; i++)
     {
       if (map->buckets[i] != NULL && map->buckets[i]->key != NULL)
       {
