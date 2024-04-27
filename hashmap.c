@@ -52,22 +52,27 @@ void insertMap(HashMap * map, char * key, void * value)
   }
   else
   {
-    for (long i = posicion + 1 ; i < map->capacity ; i++)
-      {
-        map->buckets[i] = createPair(key,value); 
-        map->current++;
-        map->size++;
-        return;
-      }
+    if (mapAux[posicion].key != NULL)
+    {
+      for (long i = posicion + 1 ; i < map->capacity ; i++)
+        {
+          map->buckets[i] = createPair(key,value); 
+          map->current++;
+          map->size++;
+          return;
+        }
+    }
   }
+    if (mapAux[posicion].key == NULL)
+    {
       for (long j = 0 ; j < posicion ; j++)
         {
-          
           map->buckets[j] = createPair(key,value);
           map->current++;
           map->size++;
           return;
-      }
+        }
+    }
 }
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
