@@ -180,9 +180,6 @@ Pair * firstMap(HashMap * map)
 
 Pair * nextMap(HashMap * map) 
 {
-  if (map == NULL || firstMap(map) == NULL) {
-    return NULL;
-  }
 
   for (long i = map->current + 1; i < map->capacity; i++) {
     if (map->buckets[i] != NULL && map->buckets[i]->key != NULL) {
@@ -192,6 +189,4 @@ Pair * nextMap(HashMap * map)
   }
 
   return NULL;
-
-    return NULL;
 }
