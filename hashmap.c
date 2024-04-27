@@ -45,7 +45,7 @@ void insertMap(HashMap * map, char * key, void * value)
   Pair *mapAux = createPair(key,value);
   if (map->buckets[posicion]->key == NULL)
   {
-    map->buckets[posicion] = mapAux;
+    map->buckets = mapAux;
     map->current++;
     map->size++;
     return;
@@ -71,9 +71,9 @@ void insertMap(HashMap * map, char * key, void * value)
           map->size++;
           return;
         }  
-    }
 }
-void enlarge(HashMap * map) {
+void enlarge(HashMap * map) 
+{
     enlarge_called = 1; //no borrar (testing purposes)
 
 
