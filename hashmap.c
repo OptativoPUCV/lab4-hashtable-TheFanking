@@ -46,6 +46,10 @@ void insertMap(HashMap * map, char * key, void * value)
   {
     exit(EXIT_FAILURE);
   }
+  if (posicion < 0 || posicion > map->capacity)
+  {
+    exit(EXIT_FAILURE);
+  }
   Pair *mapAux = createPair(key,value);
   if (mapAux == NULL)
     {
