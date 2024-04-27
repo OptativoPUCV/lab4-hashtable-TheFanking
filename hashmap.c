@@ -109,7 +109,16 @@ HashMap * createMap(long capacity)
 
 void eraseMap(HashMap * map,  char * key) {    
 
-  printf("HOLa");
+  long posicion = hash(key,map->capacity);
+  for (long i = posicion ; i < map->capacity ; i++)
+    {
+      if (i == posicion)
+      {
+        map->buckets[i] = NULL;
+        map->size--;
+        
+      }
+    }
 }
 
 Pair * searchMap(HashMap * map,  char * key) 
