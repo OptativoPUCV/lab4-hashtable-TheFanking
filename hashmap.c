@@ -43,12 +43,15 @@ void insertMap(HashMap * map, char * key, void * value)
 {
   long posicion = hash(key,map->capacity);
   Pair *mapAux = createPair(key,value);
+  if (mapAux == NULL)
+    {
+      exit(EXIT_FAILURE);
+    }
   if (mapAux[posicion].key == NULL)
   {
     map->buckets[posicion] = createPair(key, value);
     map->current++;
     map->size++;
-    return;
   }
   else
   {
