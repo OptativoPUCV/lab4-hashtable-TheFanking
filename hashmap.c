@@ -180,7 +180,7 @@ Pair * firstMap(HashMap * map)
 
 Pair * nextMap(HashMap * map) 
 {
-  if (map == NULL || first(map) == -1) {
+  if (map == NULL || firstMap(map) == -1) {
     return NULL;
   }
 
