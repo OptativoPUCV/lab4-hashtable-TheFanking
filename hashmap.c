@@ -122,8 +122,29 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 Pair * searchMap(HashMap * map,  char * key) 
-{ 
+{
+  if (map == NULL)
+  {
+    return NULL;
+  }
+  long posicion = hash(key,map->capacity)
 
+  if (strcmp(map->buckets[posicion].key,key) == 0)
+  {
+    return map->buckets[posicion];
+  }
+  else
+  {
+    for (int i = map->buckets[posicion] + 1 ; i < map->capacity ; i++)
+      {
+        if (strcmp(map->buckets[i],key) == 0)
+        {
+          return map->buckets[i];
+        }
+        return NULL
+      }
+  }
+  
   return NULL;
 }
 
