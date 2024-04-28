@@ -125,17 +125,19 @@ HashMap * createMap(long capacity)
     return map;
 }
 
-void eraseMap(HashMap * map,  char * key) {    
+void eraseMap(HashMap * map,  char * key) 
+{    
 
   long posicion = hash(key,map->capacity);
-  for (long i = posicion ; i < map->capacity ; i++)
+  long i =  posicion;
+  while (i < posicion)
     {
-      if (i == posicion)
+      if (map->buckets[i] == map->buckets[posicion])
       {
         map->buckets[i] = NULL;
         map->size--;
-        
       }
+      i++;
     }
 }
 
