@@ -137,7 +137,7 @@ void eraseMap(HashMap * map,  char * key)
       {
         map->buckets[i] = NULL;
         map->size--;
-        break;
+        return;
       }
       i++;
     }
