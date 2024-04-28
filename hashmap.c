@@ -130,7 +130,7 @@ void eraseMap(HashMap * map,  char * key)
 
   long posicion = hash(key,map->capacity);
   long i =  posicion;
-  if (map->buckets[posicion]->key != NULL && strcmp(map->buckets[posicion]->key,key) == 0)
+  if (map->buckets[posicion] != NULL && strcmp(map->buckets[posicion]->key,key) == 0)
   {
     free(map->buckets[0]);
     map->buckets[0] = NULL;
