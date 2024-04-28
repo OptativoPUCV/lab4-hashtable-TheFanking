@@ -150,8 +150,8 @@ void eraseMap(HashMap * map,  char * key)
         }
         i++;
       }
-    return;
   }
+  return;
 }
 
 Pair * searchMap(HashMap * map,  char * key) 
