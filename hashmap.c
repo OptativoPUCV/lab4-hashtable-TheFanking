@@ -142,8 +142,8 @@ void eraseMap(HashMap * map,  char * key)
       }
       i++;
     }
-  }
 }
+
 
 Pair * searchMap(HashMap * map,  char * key) 
 {
