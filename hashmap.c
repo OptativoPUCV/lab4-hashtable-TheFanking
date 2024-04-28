@@ -150,6 +150,7 @@ void eraseMap(HashMap * map,  char * key)
         }
         i++;
       }
+    return;
   }
 }
 
