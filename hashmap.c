@@ -149,7 +149,6 @@ void eraseMap(HashMap * map,  char * key)
           map->size--;
         }
         i++;
-        return;
       }
   }
 }
