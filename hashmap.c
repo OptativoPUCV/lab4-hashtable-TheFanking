@@ -87,7 +87,7 @@ void enlarge(HashMap * map)
     return;
   }
   long i = 0;
-  while ( i < map->capacity && i == map->capacity)
+  while ( i < map->capacity / 2)
     {
       if (aux[i] != NULL)
       {
